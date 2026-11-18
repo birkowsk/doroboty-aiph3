@@ -2,42 +2,59 @@
 
 Materiał dla osoby prowadzącej test (Q3.3). Po polsku, bo fragmenty czytasz uczestnikom na głos.
 Zasady techniczne i kryteria akceptacji: [employer-shortlist-highlights.md](employer-shortlist-highlights.md).
+Post na Circle: [employer-shortlist-circle-post.md](employer-shortlist-circle-post.md).
 
 ## Co sprawdzamy
 
 - **Problem (O05):** rekruter dostaje dużo zgłoszeń, a mało osób wartych rozmowy. „Chcę dostać
   kilka osób, z którymi warto rozmawiać, a nie tylko dużo zgłoszeń.”
 - **Hipoteza:** jeśli na górze tej samej listy są 3–5 wyróżnionych osób z krótkim, konkretnym
-  powodem, rekruter zaczyna od nich i nie potrzebuje więcej kliknięć niż przy zwykłej liście.
+  powodem, rekruter zaczyna od nich i nie musi otwierać więcej zgłoszeń niż przy zwykłej liście.
+- **Zadanie:** „Wybierz 3 osoby i zaproś je na pierwszą rozmowę.”
+- **Wynik w aplikacji:** wybrane 3 zgłoszenia mają etap „Zaproszenie na rozmowę” i zostają przy nim
+  po odświeżeniu strony.
 - **Próg:** co najmniej **3 z 4** osób, które jako pierwszą widzą listę z wyróżnieniami, zaczyna od
-  wyróżnionych i nie klika więcej niż grupa, która zaczyna od listy kontrolnej. Liczymy **tylko
-  pierwszy kontakt** z listą.
+  wyróżnionych (**pierwsze otwarte zgłoszenie** to osoba z sekcji „Warto porozmawiać”) i przed
+  wyborem **otwiera nie więcej zgłoszeń** niż grupa, która zaczyna od listy kontrolnej. Liczymy
+  **tylko pierwszy kontakt** z listą.
+- **Kiedy zmieniam kierunek:** uczestnicy pomijają sekcję i wybierają po Match Score albo mówią, że
+  i tak muszą przejrzeć wszystkie zgłoszenia.
 - **To jest sygnał o czytelności z małej próby, nie wynik statystyczny.** Test nie sprawdza, czy
   wyróżnione osoby są naprawdę lepszymi kandydatami.
 
 ## Co jest symulacją (powiedz to przy publikacji wyników)
 
 - Wszyscy kandydaci, CV, odpowiedzi i Match Score są fikcyjne.
-- Wyróżnienia i powody wybrałem/wybrałam ręcznie na podstawie odpowiedzi i CV. Nie ma modelu AI
-  ani algorytmu. Kryterium wyboru nie zostało sprawdzone (eksperyment E1 nie był wykonany).
+- Wyróżnienia i powody są wybrane ręcznie na podstawie odpowiedzi i CV. Nie ma modelu AI ani
+  algorytmu. Kryterium wyboru nie zostało sprawdzone (eksperyment E1 nie był wykonany).
 - Uczestnicy grają rolę rekrutera; nie są to prawdziwi rekruterzy BrightLabs.
 
-## Przygotowanie (raz)
+## Gdzie uruchomić
 
-1. Uruchom aplikację: `npm run dev`, adres http://127.0.0.1:3001.
-2. Otwórz **Ustawienia → Resetuj** i potwierdź. Wejdź jako **Karolina Wiśniewska**.
-3. Sprawdź oba adresy:
-   - wariant z wyróżnieniami: `http://127.0.0.1:3001/#/app/kandydaci?wariant=wyroznione`
-   - wariant kontrolny: `http://127.0.0.1:3001/#/app/kandydaci?wariant=kontrolny`
-4. Przygotuj arkusz notatek (niżej) i stoper.
+**Opublikowana wersja (zalecana):** https://birkowsk.github.io/doroboty-aiph3/
+
+- Wejście jako rekruterka: https://birkowsk.github.io/doroboty-aiph3/#/auth/sign-in?audience=employer
+- Wariant W: https://birkowsk.github.io/doroboty-aiph3/#/app/kandydaci?wariant=wyroznione
+- Wariant K: https://birkowsk.github.io/doroboty-aiph3/#/app/kandydaci?wariant=kontrolny
+
+Lokalnie (`npm run dev`) działa to samo pod `http://127.0.0.1:3001/` z tymi samymi ścieżkami.
 
 ## Przed każdym wariantem (ważne)
 
-- **Zresetuj scenariusz** (Ustawienia → Resetuj) i wejdź ponownie jako Karolina. Zmiany etapów
-  zapisują się w przeglądarce; bez resetu kolejna osoba zobaczy np. „W przeglądzie” przy kimś.
-- **Zawsze otwieraj listę pełnym adresem z `?wariant=`.** Aplikacja pamięta wariant w danej karcie
-  przeglądarki i nie pokazuje go na ekranie. Bezpieczniej: nowa karta dla każdego uczestnika.
-- Przewiń stronę na samą górę, zanim oddasz ekran uczestnikowi.
+Każdy wariant musi startować z czystymi danymi: zmiany etapów zapisują się w przeglądarce, a
+aplikacja pamięta wariant w danej karcie i nie pokazuje go na ekranie.
+
+**Najprościej: nowe okno prywatne (incognito) dla każdego wariantu.** Ma puste dane, więc nie
+trzeba nic resetować.
+
+1. Otwórz nowe okno prywatne.
+2. Wejdź linkiem „Wejście jako rekruterka” i wybierz **Karolina Wiśniewska** (aplikacja przejdzie
+   do „Moje oferty”).
+3. Otwórz link wariantu (W albo K) z listy wyżej. Przewiń na samą górę i oddaj ekran.
+4. Po zakończeniu wariantu zamknij okno prywatne.
+
+Bez okna prywatnego: Ustawienia → Resetuj → potwierdź, wejdź ponownie jako Karolina i otwórz pełny
+link wariantu.
 
 ## Przydział i kolejność
 
@@ -56,7 +73,7 @@ Zrównoważona kolejność. W = lista z wyróżnieniami, K = lista kontrolna.
 
 Jeśli ktoś odpadnie, kolejną osobę przypisz do tej samej kolejności, żeby grupy W i K miały po 4.
 
-## Przebieg (ok. 15 minut)
+## Przebieg (ok. 15–20 minut)
 
 ### 1. Wprowadzenie (czytaj)
 
@@ -68,22 +85,31 @@ Jeśli ktoś odpadnie, kolejną osobę przypisz do tej samej kolejności, żeby 
 ### 2. Zadanie: pierwszy kontakt (czytaj)
 
 > Jesteś rekruterką lub rekruterem w firmie BrightLabs. Na ofertę „AI Product Manager” przyszło 18
-> zgłoszeń. Masz mało czasu. Wybierz 3 osoby, z którymi chcesz umówić pierwszą rozmowę, i powiedz
-> mi, dlaczego. Daj znać, kiedy skończysz.
+> zgłoszeń. Masz mało czasu. Wybierz 3 osoby i zaproś je na pierwszą rozmowę. Powiedz mi, dlaczego
+> wybierasz te osoby. Daj znać, kiedy skończysz.
 
-- Włącz stoper, gdy uczestnik zobaczy listę. Limit: 5 minut (po czasie poproś o decyzję).
+- Włącz stoper, gdy uczestnik zobaczy listę. Limit: 7 minut (po czasie poproś o decyzję).
 - Nie odpowiadaj na pytania o ekran; odpowiedz „Jak myślisz?” albo „Zrób tak, jak zrobiłbyś
   normalnie”.
+- **Zaproszenie wymaga dwóch kroków na osobę.** Z etapu „Aplikacja wysłana” można przejść tylko do
+  „W przeglądzie” (albo „Proces zakończony”); przycisk „Zaproszenie na rozmowę” pojawia się dopiero
+  potem. **Nie podpowiadaj tego.** Jeśli uczestnik utknie na dłużej niż ok. 30 sekund, zanotuj to
+  jako problem ścieżki i dopiero wtedy powiedz: „Spróbuj przejść dalej w procesie”.
+- Po zakończeniu **odśwież stronę** (F5 / Cmd+R) i sprawdź, czy 3 wybrane osoby mają etap
+  „Zaproszenie na rozmowę”.
 
 ### 3. Co notujesz przy pierwszym kontakcie
 
-- **Gdzie zaczyna:** pierwsza karta, którą otwiera albo czyta na głos. W wariancie W: czy jest w
-  sekcji „Warto porozmawiać”? W wariancie K: która to pozycja na liście?
-- **Kliknięcia do decyzji:** każde kliknięcie w kartę, „Kandydaci” (powrót), menu, wyszukiwarkę lub
-  zmianę etapu. Przewijanie nie liczy się jako kliknięcie.
-- **Czas** do podania trzech osób.
-- **Wybrane 3 osoby** i podane powody.
-- Czy przeczytał/a informację, że wyróżnienia są przygotowane ręcznie.
+- **Pierwsze otwarte zgłoszenie:** kto to jest. W wariancie W: czy jest w sekcji „Warto
+  porozmawiać”? W wariancie K: która to pozycja na liście?
+- **Liczba otwartych zgłoszeń przed wyborem:** każde wejście w szczegóły zgłoszenia (kliknięcie
+  imienia i nazwiska) do momentu zaproszenia trzeciej osoby. Ponowne otwarcie tej samej osoby też
+  liczysz; osobno zapisz, ile różnych osób otworzył/a.
+- **Czas** do zaproszenia trzeciej osoby.
+- **Zaproszone 3 osoby** i podane powody; czy etap został po odświeżeniu.
+- **Czy utknął/utknęła** na dwustopniowym zaproszeniu (tak/nie, ile czasu).
+- Czy wybierał/a po Match Score (mówi o wyniku, sortuje wzrokiem po kolorach) i czy przeczytał/a
+  informację, że wyróżnienia są przygotowane ręcznie.
 
 ### 4. Pytania po pierwszym kontakcie
 
@@ -91,40 +117,47 @@ Jeśli ktoś odpadnie, kolejną osobę przypisz do tej samej kolejności, żeby 
 2. (Tylko W) Co oznaczało pole „Dlaczego warto porozmawiać”? Kto lub co, Twoim zdaniem, wybrało te
    osoby? _Sprawdzasz, czy ktoś myśli, że to AI lub ocena Match Score._
 3. (Tylko W) Czy powód był wystarczający, żeby zaprosić na rozmowę, czy coś sprawdzał(a)byś jeszcze?
-4. Co było najtrudniejsze w wybieraniu?
+4. Czy masz poczucie, że i tak trzeba przejrzeć wszystkie zgłoszenia? Dlaczego?
+5. Co było najtrudniejsze w wybieraniu i zapraszaniu?
 
 ### 5. Drugi kontakt (tylko rozmowa)
 
-Zresetuj scenariusz, otwórz drugi wariant i poproś: „Spójrz na tę wersję listy. Czym się różni i
+W nowym oknie prywatnym otwórz drugi wariant i poproś: „Spójrz na tę wersję listy. Czym się różni i
 która lepiej pomaga Ci wybrać osoby do rozmowy?” Tych obserwacji **nie liczysz do progu**: uczestnik
 zna już kandydatów.
 
 ## Arkusz notatek
 
-| Kod | Pierwszy wariant | Pierwsza karta (sekcja / pozycja) | Zaczął od wyróżnionych? | Kliknięcia | Czas | Wybrane 3 osoby | Rozumie, że wyróżnienia są ręczne? | Cytat / uwaga |
-| --- | ---------------- | --------------------------------- | ----------------------- | ---------- | ---- | --------------- | ---------------------------------- | ------------- |
-| P1  | W                |                                   |                         |            |      |                 |                                    |               |
-| P2  | K                |                                   | —                       |            |      |                 | —                                  |               |
-| P3  | W                |                                   |                         |            |      |                 |                                    |               |
-| P4  | K                |                                   | —                       |            |      |                 | —                                  |               |
-| P5  | W                |                                   |                         |            |      |                 |                                    |               |
-| P6  | K                |                                   | —                       |            |      |                 | —                                  |               |
-| P7  | W                |                                   |                         |            |      |                 |                                    |               |
-| P8  | K                |                                   | —                       |            |      |                 | —                                  |               |
+| Kod | Pierwszy wariant | Pierwsze otwarte zgłoszenie (osoba, sekcja / pozycja) | Zaczął od wyróżnionych? | Otwarte zgłoszenia (wszystkie / różne) | Czas | Zaproszone 3 osoby | Etap po odświeżeniu OK? | Utknął na zaproszeniu? | Wybierał po Match Score? | Rozumie, że wyróżnienia są ręczne? | Cytat / uwaga |
+| --- | ---------------- | ----------------------------------------------------- | ----------------------- | -------------------------------------- | ---- | ------------------ | ----------------------- | ---------------------- | ------------------------ | ---------------------------------- | ------------- |
+| P1  | W                |                                                       |                         |                                        |      |                    |                         |                        |                          |                                    |               |
+| P2  | K                |                                                       | —                       |                                        |      |                    |                         |                        |                          | —                                  |               |
+| P3  | W                |                                                       |                         |                                        |      |                    |                         |                        |                          |                                    |               |
+| P4  | K                |                                                       | —                       |                                        |      |                    |                         |                        |                          | —                                  |               |
+| P5  | W                |                                                       |                         |                                        |      |                    |                         |                        |                          |                                    |               |
+| P6  | K                |                                                       | —                       |                                        |      |                    |                         |                        |                          | —                                  |               |
+| P7  | W                |                                                       |                         |                                        |      |                    |                         |                        |                          |                                    |               |
+| P8  | K                |                                                       | —                       |                                        |      |                    |                         |                        |                          | —                                  |               |
 
 ## Jak odczytać wynik
 
-1. Policz w grupie W, ile osób zaczęło od wyróżnionych (próg: co najmniej 3 z 4).
-2. Porównaj kliknięcia: mediana grupy W ma być **nie większa** niż mediana grupy K.
+1. Policz w grupie W, ile osób zaczęło od wyróżnionych, czyli pierwsze otwarte zgłoszenie było z
+   sekcji „Warto porozmawiać” (próg: co najmniej 3 z 4).
+2. Porównaj liczbę otwartych zgłoszeń przed wyborem: mediana grupy W ma być **nie większa** niż
+   mediana grupy K.
 3. Oba warunki spełnione → sygnał, że wyróżnienia są czytelne i nie dokładają pracy.
-4. Dodatkowo sprawdź (nie jest to próg, ale ważna obserwacja):
-   - Czy osoby z grupy K, które zaczęły od góry listy, i tak trafiły na kogoś z wyróżnionych?
-     Jeśli nie, wyróżnienie zmienia, od kogo rekruter zaczyna.
+4. **Zmień kierunek**, jeśli uczestnicy pomijają sekcję i wybierają po Match Score albo mówią, że i
+   tak muszą przejrzeć wszystkie zgłoszenia (pytanie 4).
+5. Dodatkowo sprawdź (nie jest to próg, ale ważna obserwacja):
+   - Czy osoby z grupy K i tak trafiły na kogoś z wyróżnionych? Jeśli nie, wyróżnienie zmienia,
+     od kogo rekruter zaczyna.
    - Czy w grupie W ktoś zaczął od wyróżnionych tylko dlatego, że były pierwsze? Słuchaj
      odpowiedzi na pytanie 1.
    - Czy ktoś uznał wyróżnienia za ocenę AI albo Match Score mimo informacji na ekranie?
-   - Czy ktoś zauważył, że wyróżnione osoby mają niższy Match Score niż część pozostałych, i co
-     z tym zrobił?
+   - Czy ktoś zauważył, że wyróżnione osoby mają niższy Match Score niż część pozostałych, i co z
+     tym zrobił?
+   - Ile osób utknęło na dwustopniowym zaproszeniu. To problem obecnej ścieżki, niezależny od
+     wyróżnień, ale wpływa na czas.
 
 ## Ograniczenia, które musisz podać przy wynikach
 

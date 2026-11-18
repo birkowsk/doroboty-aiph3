@@ -80,15 +80,22 @@ highlighting criterion identifies good candidates.
 
 ## Test protocol requirements (for the facilitator, not product code)
 
-- Task: "Masz 2 minuty. Wybierz osoby, z którymi chcesz porozmawiać." Observe where the participant
-  starts and count clicks until the first decision.
+Full procedure: [employer-shortlist-test-protocol.md](employer-shortlist-test-protocol.md).
+
+- Task (revised 2026-11-18): "Wybierz 3 osoby i zaproś je na pierwszą rozmowę." Observable result:
+  the 3 chosen applications are at stage "Zaproszenie na rozmowę" and keep it after a page reload.
+  Inviting needs two stage changes per person (submitted → reviewed → interview invited); the
+  facilitator does not hint this step and records it if a participant gets stuck.
 - Design (decided 2026-11-18): every participant sees both variants on the same data; order is
   counterbalanced (4 start with highlights, 4 with control). **Only the first exposure counts**
   toward the threshold; the second variant is used for the debrief conversation.
-- Success threshold (revised from "≥6 of 8"): **at least 3 of the 4 participants who see the
-  highlighted list first start from the highlighted section and do not click more than the control
-  group (first exposure).** This is a readability signal from a small sample, not a statistical
-  result.
+- Success threshold (revised from "≥6 of 8", metric revised from clicks to opened applications on
+  2026-11-18): **at least 3 of the 4 participants who see the highlighted list first open a
+  highlighted application first and open no more applications before choosing than the control
+  group (median, first exposure).** This is a readability signal from a small sample, not a
+  statistical result.
+- Change direction if participants skip the section and choose by Match Score, or say they still
+  have to review every application.
 - Highlights and recruiter participants are simulated; results speak only to readability.
 
 ## Files / Areas
