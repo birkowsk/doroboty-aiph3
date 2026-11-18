@@ -1,0 +1,18 @@
+[
+  {
+    "applicationId": "application-pawel-grabowski",
+    "reason": "Sam przeprowadził 14 wywiadów z księgowymi i na ich podstawie zawęził pilota do uzgadniania sald."
+  },
+  {
+    "applicationId": "application-agnieszka-mazur",
+    "reason": "Opisała własną decyzję o wyłączeniu automatycznej klasyfikacji dokumentów, gdy po pilocie poprawek przybyło o 30%."
+  },
+  {
+    "applicationId": "application-ewa-pawlak",
+    "reason": "Sama poprowadziła pilotaż obiegu faktur u dwóch klientów i zmierzyła skrócenie obsługi z 6 do 4 dni."
+  },
+  {
+    "applicationId": "application-magdalena-wrobel",
+    "reason": "Ustaliła z inżynierami próg jakości odczytu danych z umów i z tego powodu ograniczyła pierwszą wersję."
+  }
+]

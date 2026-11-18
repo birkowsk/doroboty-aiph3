@@ -337,3 +337,35 @@
   border-radius: 10px;
   background: var(--gui-canvas);
 }
+
+/* Employer queue with manually prepared shortlist highlights (prototype test only). */
+.shortlist-section {
+  margin-top: 40px;
+}
+.shortlist-section > h2 {
+  margin-bottom: 8px;
+}
+.shortlist-note {
+  max-width: 72ch;
+  margin-bottom: 20px;
+  color: var(--gui-text-muted-accessible);
+  font-size: var(--gui-text-s);
+  line-height: 1.6;
+}
+.shortlist-reason {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: var(--gui-color-1-transparent);
+  border: 1px solid var(--foreground);
+  border-radius: var(--gui-radius-s);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.shortlist-reason-label {
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  .shortlist-section {
+    margin-top: 32px;
+  }
+}

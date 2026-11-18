@@ -1,0 +1,192 @@
+{
+  "jobId": "20000000-0000-4000-8000-000000000001",
+  "applicants": [
+    {
+      "id": "applicant-joanna-lis",
+      "name": "Joanna Lis",
+      "headline": "Senior Product Manager · SaaS",
+      "location": "Warszawa",
+      "score": 91,
+      "submittedAt": "2026-11-02T09:40:00.000Z",
+      "cv": "Joanna Lis — Senior Product Manager\n2019–2026: produkty SaaS dla średnich firm. Odpowiedzialność za roadmapę, OKR-y i współpracę ze stakeholderami. Wdrożenia funkcji opartych na danych i GenAI.\nWykształcenie: zarządzanie, SGH.",
+      "answer": "Jestem data-driven Product Managerką z doświadczeniem w GenAI i zarządzaniu stakeholderami. Łączę perspektywę biznesową z technologiczną i dowożę wartość dla klientów. Chętnie wniosę to doświadczenie do BrightLabs.",
+      "summary": "Doświadczenie w produktach SaaS i pracy z roadmapą. Podczas rozmowy warto doprecyzować przykłady własnych decyzji produktowych."
+    },
+    {
+      "id": "applicant-pawel-grabowski",
+      "name": "Paweł Grabowski",
+      "headline": "Product Manager · narzędzia finansowe",
+      "location": "Łódź",
+      "score": 58,
+      "submittedAt": "2026-11-02T10:15:00.000Z",
+      "cv": "Paweł Grabowski — Product Manager\n2023–2026: narzędzia do zamknięcia miesiąca dla biur rachunkowych. Wcześniej 2018–2023: analityk biznesowy w dziale finansów.\nDiscovery z użytkownikami, analiza procesów, przygotowanie pilotów.",
+      "answer": "Sam przeprowadziłem 14 wywiadów z księgowymi i zmierzyłem, ile czasu zajmuje im zamknięcie miesiąca. Na tej podstawie zawęziliśmy pilota do uzgadniania sald, zamiast automatyzować całe księgowanie faktur. Chętnie opowiem, z czego zrezygnowaliśmy i dlaczego.",
+      "summary": "Doświadczenie w narzędziach finansowych i analizie procesów. Podczas rozmowy warto doprecyzować doświadczenie w prowadzeniu większego zespołu."
+    },
+    {
+      "id": "applicant-katarzyna-wojcik",
+      "name": "Katarzyna Wójcik",
+      "headline": "Product Manager · fintech",
+      "location": "Warszawa",
+      "score": 88,
+      "submittedAt": "2026-11-02T11:05:00.000Z",
+      "cv": "Katarzyna Wójcik — Product Manager\n2020–2026: fintech. Wprowadzone produkty: aplikacja do płatności odroczonych, panel dla merchantów, moduł raportów dla klientów firmowych.\nCertyfikat: Product Management, 2021.",
+      "answer": "W ostatnich latach wprowadziłam na rynek trzy produkty fintechowe: płatności odroczone, panel dla merchantów i moduł raportów. Pracuję z zespołami inżynierskimi i biznesem. Interesuje mnie rozwój w kierunku automatyzacji procesów finansowych.",
+      "summary": "Doświadczenie w produktach fintech i wprowadzaniu nowych funkcji. Podczas rozmowy warto doprecyzować wyniki wdrożonych produktów."
+    },
+    {
+      "id": "applicant-michal-kaczmarek",
+      "name": "Michał Kaczmarek",
+      "headline": "Product Owner · logistyka",
+      "location": "Poznań",
+      "score": 66,
+      "submittedAt": "2026-11-02T11:50:00.000Z",
+      "cv": "Michał Kaczmarek — Product Owner\n2021–2026: system planowania dostaw dla operatora logistycznego. Praca z backlogiem, planowanie sprintów, współpraca z magazynami.",
+      "answer": "Razem z zespołem zbudowaliśmy system planowania dostaw, który usprawnił pracę magazynów. Zrobiliśmy kilka iteracji i wdrożyliśmy rozwiązanie w trzech lokalizacjach. Chcemy teraz rozwijać automatyzację i to mnie interesuje.",
+      "summary": "Doświadczenie w produktach logistycznych i pracy z backlogiem. Podczas rozmowy warto doprecyzować własny udział w opisanym projekcie."
+    },
+    {
+      "id": "applicant-agnieszka-mazur",
+      "name": "Agnieszka Mazur",
+      "headline": "Product Manager · narzędzia księgowe",
+      "location": "Wrocław",
+      "score": 74,
+      "submittedAt": "2026-11-02T12:30:00.000Z",
+      "cv": "Agnieszka Mazur — Product Manager\n2020–2026: narzędzia księgowe dla małych firm. Prowadzenie pilotów automatyzacji dokumentów, praca z zespołem wsparcia klienta.\nWcześniej: konsultantka wdrożeń systemów finansowo-księgowych.",
+      "answer": "Prowadziłam pilota automatycznej klasyfikacji dokumentów. Po pilocie poprawek przybyło o 30%, więc podjęłam decyzję o wyłączeniu automatycznej klasyfikacji dokumentów i powrocie do podpowiedzi zatwierdzanych przez księgowych. Chętnie omówię, jak doszłam do tej decyzji.",
+      "summary": "Doświadczenie w narzędziach księgowych i prowadzeniu pilotów. Podczas rozmowy warto doprecyzować doświadczenie z klientami większymi niż małe firmy."
+    },
+    {
+      "id": "applicant-krzysztof-dabrowski",
+      "name": "Krzysztof Dąbrowski",
+      "headline": "Head of Product · platformy B2B",
+      "location": "Warszawa",
+      "score": 93,
+      "submittedAt": "2026-11-02T13:10:00.000Z",
+      "cv": "Krzysztof Dąbrowski — Head of Product\n2017–2026: kierowanie działem produktu (12 osób) w firmie z platformą B2B. Strategia produktu, budżet, rekrutacja zespołu, wystąpienia konferencyjne o transformacji cyfrowej.",
+      "answer": "Wierzę, że sztuczna inteligencja zmieni sposób pracy działów finansowych. Moją rolą jest budowanie wizji i strategii produktu oraz inspirowanie zespołów. W BrightLabs widzę potencjał do skalowania tej wizji na cały rynek.",
+      "summary": "Doświadczenie w kierowaniu działem produktu i strategii B2B. Podczas rozmowy warto doprecyzować gotowość do samodzielnej pracy w jednym obszarze."
+    },
+    {
+      "id": "applicant-natalia-zajac",
+      "name": "Natalia Zając",
+      "headline": "Junior Product Analyst · finanse",
+      "location": "Kraków",
+      "score": 61,
+      "submittedAt": "2026-11-02T13:45:00.000Z",
+      "cv": "Natalia Zając — Junior Product Analyst\n2025–2026: analityczka produktu w firmie z oprogramowaniem do fakturowania. 2019–2025: księgowa w biurze rachunkowym.\nKurs Product Management, 2025.",
+      "answer": "Przez sześć lat pracowałam jako księgowa i dobrze znam ręczne sprawdzanie dokumentów. Od roku pracuję jako analityczka produktu i przygotowuję analizy dla Product Managera. Chciałabym rozwijać się w kierunku samodzielnego prowadzenia produktu.",
+      "summary": "Doświadczenie w księgowości i analizie produktu. Podczas rozmowy warto doprecyzować doświadczenie w samodzielnym prowadzeniu produktu."
+    },
+    {
+      "id": "applicant-bartosz-krol",
+      "name": "Bartosz Król",
+      "headline": "Product Manager · e-commerce",
+      "location": "Gdańsk",
+      "score": 79,
+      "submittedAt": "2026-11-02T14:20:00.000Z",
+      "cv": "Bartosz Król — Product Manager\n2020–2026: sklep internetowy z elektroniką. Ścieżka zakupowa, rekomendacje produktów, testy A/B.\nWyniki: konwersja koszyka +12% po zmianie procesu płatności.",
+      "answer": "Prowadziłem zmianę procesu płatności w sklepie internetowym i przetestowałem ją w teście A/B, co podniosło konwersję koszyka o 12%. Lubię pracę na danych i szybkie eksperymenty. Chcę spróbować sił w produktach dla firm.",
+      "summary": "Doświadczenie w e-commerce i eksperymentach produktowych. Podczas rozmowy warto doprecyzować doświadczenie z procesami operacyjnymi firm."
+    },
+    {
+      "id": "applicant-ewa-pawlak",
+      "name": "Ewa Pawlak",
+      "headline": "Product Owner · obieg dokumentów",
+      "location": "Katowice",
+      "score": 70,
+      "submittedAt": "2026-11-02T15:00:00.000Z",
+      "cv": "Ewa Pawlak — Product Owner\n2021–2026: system obiegu dokumentów dla firm produkcyjnych. Pilotaże u klientów, pomiar czasu obsługi, współpraca z zespołem wdrożeniowym.",
+      "answer": "Sama poprowadziłam pilotaż obiegu faktur u dwóch klientów. Przed startem zmierzyłam czas obsługi faktury, a po pilotażu porównałam wynik: obsługa skróciła się z 6 do 4 dni. Opowiem też, czego nie udało się poprawić.",
+      "summary": "Doświadczenie w systemach obiegu dokumentów i pracy z klientami. Podczas rozmowy warto doprecyzować doświadczenie w pracy z designerem."
+    },
+    {
+      "id": "applicant-adrian-szymanski",
+      "name": "Adrian Szymański",
+      "headline": "Data Scientist · modele predykcyjne",
+      "location": "Warszawa",
+      "score": 85,
+      "submittedAt": "2026-11-02T15:40:00.000Z",
+      "cv": "Adrian Szymański — Data Scientist\n2019–2026: modele predykcyjne i klasyfikacja tekstu dla banku. Python, MLOps, wdrożenia modeli na produkcję.\nPublikacje na konferencjach branżowych.",
+      "answer": "Od siedmiu lat trenuję i wdrażam modele klasyfikacji tekstu oraz modele predykcyjne. Mam doświadczenie z MLOps i monitorowaniem jakości modeli. Chcę przejść do roli produktowej i wykorzystać wiedzę techniczną.",
+      "summary": "Doświadczenie w budowie i wdrażaniu modeli danych. Podczas rozmowy warto doprecyzować doświadczenie w pracy z użytkownikami produktu."
+    },
+    {
+      "id": "applicant-monika-kozlowska",
+      "name": "Monika Kozłowska",
+      "headline": "Product Owner · oprogramowanie kadrowe",
+      "location": "Lublin",
+      "score": 67,
+      "submittedAt": "2026-11-02T16:15:00.000Z",
+      "cv": "Monika Kozłowska — Product Owner\n2022–2026: oprogramowanie kadrowo-płacowe. Backlog, kontakt z klientami, przygotowanie wymagań.",
+      "answer": "Jestem Product Ownerką w firmie tworzącej oprogramowanie kadrowe. Dobrze znam procesy firmowe i współpracę z klientami. Chętnie dołączę do zespołu BrightLabs.",
+      "summary": "Doświadczenie w oprogramowaniu kadrowym i pracy z wymaganiami. Podczas rozmowy warto doprecyzować przykłady prowadzonych zmian."
+    },
+    {
+      "id": "applicant-lukasz-jankowski",
+      "name": "Łukasz Jankowski",
+      "headline": "Product Manager · SaaS",
+      "location": "Wrocław",
+      "score": 82,
+      "submittedAt": "2026-11-02T16:50:00.000Z",
+      "cv": "Łukasz Jankowski — Product Manager\n2020–2026: SaaS dla działów sprzedaży. Certyfikaty: PSPO I, PSPO II, Professional Scrum Master, kurs AI for Product Managers.",
+      "answer": "Posiadam certyfikaty PSPO I, PSPO II i Professional Scrum Master oraz ukończyłem kurs AI for Product Managers. Stosuję sprawdzone frameworki produktowe i dbam o zgodność pracy zespołu ze Scrumem. Chętnie wniosę te kompetencje.",
+      "summary": "Doświadczenie w produktach SaaS i pracy zwinnej. Podczas rozmowy warto doprecyzować przykład własnego projektu i jego wyników."
+    },
+    {
+      "id": "applicant-magdalena-wrobel",
+      "name": "Magdalena Wróbel",
+      "headline": "Product Manager · narzędzia do umów",
+      "location": "Warszawa",
+      "score": 76,
+      "submittedAt": "2026-11-02T17:30:00.000Z",
+      "cv": "Magdalena Wróbel — Product Manager\n2021–2026: narzędzie do przeglądu umów dla działów zakupów. Współpraca z inżynierami nad jakością odczytu danych, ustalanie zakresu wersji.",
+      "answer": "Z inżynierami ustaliłam próg jakości odczytu danych z umów, poniżej którego wynik musi sprawdzić człowiek. Ponieważ tylko część pól spełniała ten próg, ograniczyłam pierwszą wersję do dat i kwot. Chętnie opowiem, jak zmierzyliśmy jakość.",
+      "summary": "Doświadczenie w narzędziach do umów i współpracy z inżynierami. Podczas rozmowy warto doprecyzować doświadczenie z procesami finansowymi."
+    },
+    {
+      "id": "applicant-piotr-kaminski",
+      "name": "Piotr Kamiński",
+      "headline": "Konsultant wdrożeń ERP",
+      "location": "Bydgoszcz",
+      "score": 63,
+      "submittedAt": "2026-11-03T08:20:00.000Z",
+      "cv": "Piotr Kamiński — Konsultant wdrożeń\n2016–2026: wdrożenia systemów ERP w firmach produkcyjnych i handlowych. Konfiguracja modułów finansowych, szkolenia użytkowników.",
+      "answer": "Od dziesięciu lat wdrażam systemy ERP i znam procesy finansowe od strony klienta. Prowadziłem wiele wdrożeń w różnych branżach. Chcę przejść na stronę produktu.",
+      "summary": "Doświadczenie we wdrożeniach systemów ERP i procesach finansowych. Podczas rozmowy warto doprecyzować doświadczenie w roli produktowej."
+    },
+    {
+      "id": "applicant-aleksandra-lewandowska",
+      "name": "Aleksandra Lewandowska",
+      "headline": "Product Manager · bankowość korporacyjna",
+      "location": "Warszawa",
+      "score": 89,
+      "submittedAt": "2026-11-03T09:05:00.000Z",
+      "cv": "Aleksandra Lewandowska — Product Manager\n2018–2026: bankowość korporacyjna. Odpowiedzialność za roadmapę kanałów cyfrowych, koordynacja wielu zespołów, raportowanie do zarządu.",
+      "answer": "Odpowiadałam za roadmapę kanałów cyfrowych w bankowości korporacyjnej i koordynowałam pracę wielu zespołów. Mam doświadczenie w złożonym środowisku i raportowaniu do zarządu. Szukam roli z większym wpływem na produkt.",
+      "summary": "Doświadczenie w bankowości korporacyjnej i koordynacji zespołów. Podczas rozmowy warto doprecyzować przykład decyzji podjętej samodzielnie."
+    },
+    {
+      "id": "applicant-jakub-wieczorek",
+      "name": "Jakub Wieczorek",
+      "headline": "Product Manager",
+      "location": "Szczecin",
+      "score": 55,
+      "submittedAt": "2026-11-03T09:40:00.000Z",
+      "cv": "Jakub Wieczorek — Product Manager\n2022–2026: Product Manager w agencji software house. Projekty dla różnych klientów.",
+      "answer": "Szanowni Państwo, jestem zainteresowany ofertą pracy w Państwa firmie. Załączam CV i pozostaję do dyspozycji.",
+      "summary": "Doświadczenie w projektach dla klientów agencji. Podczas rozmowy warto doprecyzować dopasowanie do tej konkretnej roli."
+    },
+    {
+      "id": "applicant-zofia-michalska-grabowska",
+      "name": "Zofia Michalska-Grabowska",
+      "headline": "Product Owner · back-office bankowy",
+      "location": "Warszawa",
+      "score": 71,
+      "submittedAt": "2026-11-03T10:25:00.000Z",
+      "cv": "Zofia Michalska-Grabowska — Product Owner\n2020–2026: systemy back-office w banku detalicznym. Automatyzacja weryfikacji wniosków, współpraca z działem operacji.",
+      "answer": "Nasz zespół zautomatyzował weryfikację części wniosków w back-office banku i skrócił czas ich obsługi. Pracowaliśmy blisko z działem operacji. Interesuje mnie przeniesienie tego doświadczenia do produktów dla firm.",
+      "summary": "Doświadczenie w systemach back-office i automatyzacji weryfikacji. Podczas rozmowy warto doprecyzować własny zakres odpowiedzialności w projekcie."
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { z } from "zod";
 import marketplace from "./data/marketplace.json" with { type: "json" };
 import people from "./data/people.json" with { type: "json" };
 import type { JobWithCompany } from "@/features/jobs/types";
+import { syntheticSeed } from "./shortlist";
 
 const id = z
   .string()
@@ -244,6 +245,9 @@ export function initialState(): State {
     stage: "submitted",
     events: [{ stage: "submitted", at: "2026-11-02T09:00:00.000Z", note: "" }],
   });
+  const seed = syntheticSeed(state);
+  state.people.push(...seed.people);
+  state.applications.push(...seed.applications);
   return stateSchema.parse(state);
 }
 export function publishedJobs(state: State): JobWithCompany[] {

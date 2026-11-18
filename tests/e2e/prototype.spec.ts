@@ -167,6 +167,51 @@ test("another company cannot see or change a candidate application", async ({ pa
   await page.goto("/#/app/kandydaci/application-example");
   await expect(page.getByRole("heading", { name: "Nie znaleziono strony" })).toBeVisible();
 });
+test("employer shortlist highlights manual picks and the control variant keeps the queue", async ({
+  page,
+}) => {
+  await page.goto("/#/auth/sign-in");
+  await expect(page.getByRole("button", { name: "Wejdź jako Paweł Grabowski" })).toHaveCount(0);
+  await choose(page, "Karolina Wiśniewska");
+  await page.goto("/#/app/kandydaci");
+  const top = page.getByRole("region", { name: "Warto porozmawiać (4)" });
+  await expect(top.getByText(/przygotowano ręcznie/)).toBeVisible();
+  await expect(top.locator("article a")).toHaveText([
+    "Paweł Grabowski",
+    "Agnieszka Mazur",
+    "Ewa Pawlak",
+    "Magdalena Wróbel",
+  ]);
+  await expect(top.locator(".shortlist-reason")).toHaveCount(4);
+  const rest = page.getByRole("region", { name: "Pozostałe zgłoszenia (14)" });
+  await expect(rest.locator("article a").first()).toHaveText("Marek Nowak");
+  await expect(rest.getByText("Ewa Pawlak")).toHaveCount(0);
+
+  await page.goto("/#/app/kandydaci?wariant=kontrolny");
+  const names = page.locator("main article a");
+  await expect(names).toHaveCount(18);
+  await expect(names.nth(2)).toHaveText("Paweł Grabowski");
+  await expect(names.nth(13)).toHaveText("Magdalena Wróbel");
+  await expect(page.locator(".shortlist-reason")).toHaveCount(0);
+  await expect(page.locator("main h2")).toHaveCount(0);
+
+  await page.getByRole("link", { name: "Ewa Pawlak", exact: true }).click();
+  await page.getByRole("button", { name: "W przeglądzie", exact: true }).click();
+  await page
+    .getByRole("navigation", { name: "Ścieżka nawigacji" })
+    .getByRole("link", { name: "Kandydaci" })
+    .click();
+  await expect(names).toHaveCount(18);
+  await expect(page.locator(".shortlist-reason")).toHaveCount(0);
+
+  await page.goto("/#/app/kandydaci?wariant=wyroznione");
+  await page.getByLabel("Szukaj kandydata lub oferty").fill("Pawlak");
+  await expect(page.getByRole("region", { name: "Warto porozmawiać (1)" })).toContainText(
+    "W przeglądzie",
+  );
+  await page.setViewportSize({ width: 320, height: 700 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
 test("candidate withdrawal is confirmed and terminal", async ({ page }) => {
   await application(page);
   await page.getByRole("link", { name: "AI Product Manager", exact: true }).click();

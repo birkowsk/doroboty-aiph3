@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from "react-router";
 import { CheckCircle2, FileText } from "lucide-react";
 import { ConfettiBurst, type ConfettiOrigin } from "@/components/confetti-burst";
@@ -10,10 +10,17 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { JobCard } from "@/features/jobs/job-card";
 import { ApplicationOfferPreview } from "@/features/jobs/application-offer-preview";
 import { usePrototype } from "./store";
-import { currentPerson, publishedJobs, stageLabels, MIN_APPLICATION_ANSWER_LENGTH } from "./model";
+import {
+  currentPerson,
+  publishedJobs,
+  stageLabels,
+  MIN_APPLICATION_ANSWER_LENGTH,
+  type Application,
+} from "./model";
 import { PageTitle, Empty, NotFound, Notice } from "./shell";
 import { CvAttachment } from "./cv-attachment";
 import { MatchScore } from "./match-score";
+import { resolveShortlistVariant, splitShortlist, syntheticApplicantIds } from "./shortlist";
 import { RecruitingApplication } from "./recruiting-application";
 import { CandidateApplication } from "./candidate-application";
 
@@ -31,10 +38,11 @@ export function PersonPicker() {
   const [params] = useSearchParams();
   const next = params.get("next");
   const audience = params.get("audience");
+  const selectable = state.people.filter((person) => !syntheticApplicantIds.has(person.id));
   const people =
     audience === "candidate" || audience === "employer"
-      ? state.people.filter((person) => person.role === audience)
-      : state.people;
+      ? selectable.filter((person) => person.role === audience)
+      : selectable;
   const safeNext = next && /^\/(?!\/)/.test(next) && !next.startsWith("/auth") ? next : null;
   return (
     <section className="prototype-section max-w-4xl">
@@ -410,17 +418,56 @@ export function ApplyPage() {
     </section>
   );
 }
+function sessionStore() {
+  try {
+    return window.sessionStorage;
+  } catch {
+    return null;
+  }
+}
 export function ApplicationsPage({ employer = false }: { employer?: boolean }) {
   const { state } = usePrototype();
   const person = currentPerson(state)!;
   const [query, setQuery] = useState("");
   const [params] = useSearchParams();
+  const variantParam = params.get("wariant");
+  const variant = useMemo(
+    () => (employer ? resolveShortlistVariant(variantParam, sessionStore()) : "control"),
+    [employer, variantParam],
+  );
   const applications = state.applications.filter(
     (x) =>
       (employer ? x.companyId === person.companyId : x.candidateId === person.id) &&
       `${x.candidateName} ${x.jobTitle}`
         .toLocaleLowerCase("pl")
         .includes(query.toLocaleLowerCase("pl")),
+  );
+  const { highlighted, rest } = splitShortlist(applications, variant);
+  const card = (a: Application, reason?: string) => (
+    <article className="prototype-panel" key={a.id}>
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <Link
+            className="text-xl font-semibold text-[var(--gui-link)]"
+            to={`${employer ? "/app/kandydaci" : "/app/aplikacje"}/${a.id}`}
+          >
+            {employer ? a.candidateName : a.jobTitle}
+          </Link>
+          <p className="my-3 text-muted-foreground">
+            {employer ? a.jobTitle : state.companies.find((x) => x.id === a.companyId)?.name}
+          </p>
+          <p>{stageLabels[a.stage]}</p>
+        </div>
+        <MatchScore score={a.score} />
+      </div>
+      {reason && (
+        <p className="shortlist-reason">
+          <span className="shortlist-reason-label">Dlaczego warto porozmawiać: </span>
+          {reason}
+        </p>
+      )}
+      {employer && <p className="mt-4 text-muted-foreground">{a.summary}</p>}
+    </article>
   );
   return (
     <>
@@ -433,34 +480,31 @@ export function ApplicationsPage({ employer = false }: { employer?: boolean }) {
       <Field label={employer ? "Szukaj kandydata lub oferty" : "Szukaj oferty"}>
         <Input value={query} onChange={(e) => setQuery(e.target.value)} />
       </Field>
-      <div className="mt-6 space-y-4">
-        {applications.length ? (
-          applications.map((a) => (
-            <article className="prototype-panel" key={a.id}>
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <Link
-                    className="text-xl font-semibold text-[var(--gui-link)]"
-                    to={`${employer ? "/app/kandydaci" : "/app/aplikacje"}/${a.id}`}
-                  >
-                    {employer ? a.candidateName : a.jobTitle}
-                  </Link>
-                  <p className="my-3 text-muted-foreground">
-                    {employer
-                      ? a.jobTitle
-                      : state.companies.find((x) => x.id === a.companyId)?.name}
-                  </p>
-                  <p>{stageLabels[a.stage]}</p>
-                </div>
-                <MatchScore score={a.score} />
-              </div>
-              {employer && <p className="mt-4 text-muted-foreground">{a.summary}</p>}
-            </article>
-          ))
-        ) : (
+      {!applications.length ? (
+        <div className="mt-6">
           <Empty>Brak aplikacji spełniających kryteria.</Empty>
-        )}
-      </div>
+        </div>
+      ) : highlighted.length ? (
+        <>
+          <section className="shortlist-section" aria-labelledby="shortlist-heading">
+            <h2 id="shortlist-heading">Warto porozmawiać ({highlighted.length})</h2>
+            <p className="shortlist-note">
+              Wyróżnienia przygotowano ręcznie na potrzeby testu prototypu, na podstawie odpowiedzi
+              i CV. Nie są oceną modelu ani Match Score. Pozostałe zgłoszenia są niżej, w kolejności
+              złożenia.
+            </p>
+            <div className="space-y-4">{highlighted.map((h) => card(h.application, h.reason))}</div>
+          </section>
+          {rest.length > 0 && (
+            <section className="shortlist-section" aria-labelledby="shortlist-rest-heading">
+              <h2 id="shortlist-rest-heading">Pozostałe zgłoszenia ({rest.length})</h2>
+              <div className="space-y-4">{rest.map((a) => card(a))}</div>
+            </section>
+          )}
+        </>
+      ) : (
+        <div className="mt-6 space-y-4">{rest.map((a) => card(a))}</div>
+      )}
     </>
   );
 }
