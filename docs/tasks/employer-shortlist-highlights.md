@@ -52,7 +52,7 @@ highlighting criterion identifies good candidates.
 - [x] Desktop 1440 / mobile 390, keyboard, empty-search state
 - [x] Update FEATURES.md (EMP-07 changed, new simulated entry)
 - [x] Run `./scripts/verify`; separate review pass
-- [ ] Write the test protocol and Circle post draft
+- [x] Write the test protocol and Circle post draft
 
 ## Acceptance criteria
 
@@ -150,4 +150,8 @@ this prototype test. They do not describe real people, companies or historical c
   lint, typecheck, unit 35/35, verify:packet, build, e2e 35/35.
 - Known limit: a highlighted application stays in the top section after rejection/withdrawal. Not
   relevant to the test (all seeded applications start as submitted).
-- Not done yet: manual keyboard walk-through in a real browser, test protocol, Circle post draft.
+- Test protocol: [employer-shortlist-test-protocol.md](employer-shortlist-test-protocol.md); Circle
+  draft: [employer-shortlist-circle-post.md](employer-shortlist-circle-post.md). Duplicate
+  `.claude/skills/doroboty-landing-ui` removed (identical copy kept in the landing repo); full
+  `./scripts/verify` now passes (exit 0).
+- Not done yet: manual keyboard walk-through in a real browser; the 8 test sessions.
