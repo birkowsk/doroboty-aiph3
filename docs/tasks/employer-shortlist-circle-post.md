@@ -21,7 +21,7 @@ discovery: „Chcę dostać kilka osób, z którymi warto rozmawiać, a nie tylk
   pełnej kolejki.
 - Zastrzeżenie: dane wyglądają na wygenerowane.
 
-**Co zbudowałem**
+**Co powstało**
 Ta sama lista zgłoszeń na ofertę „AI Product Manager” (18 osób). Na górze sekcja „Warto
 porozmawiać” z 4 osobami i jednym konkretnym zdaniem, dlaczego, np. „Sama poprowadziła pilotaż
 obiegu faktur u dwóch klientów i zmierzyła skrócenie obsługi z 6 do 4 dni”. Pozostałe 14 zgłoszeń
@@ -39,8 +39,8 @@ grupa z listą kontrolną. To sygnał o czytelności z małej próby, nie wynik 
 - Działa: lista, sekcja wyróżnionych, wariant kontrolny, wyszukiwanie, przejście do zgłoszenia i
   zmiana etapu rekrutacji. Dane zapisują się lokalnie w przeglądarce.
 - Symulacja: wszyscy kandydaci, CV, odpowiedzi i Match Score są fikcyjne.
-- **Wyróżnienia wybrałem ręcznie** na podstawie odpowiedzi i CV. Nie ma tu modelu AI ani
+- **Wyróżnienia są wybrane ręcznie** na podstawie odpowiedzi i CV. Nie ma tu modelu AI ani
   algorytmu. Celowo nie są to osoby z najwyższym Match Score, bo w danych Match Score słabo
-  przewidywał zaproszenia (AUC 0,53). Nie sprawdziłem jeszcze, czy takie kryterium wskazuje
+  przewidywał zaproszenia (AUC 0,53). Nie zostało jeszcze sprawdzone, czy takie kryterium wskazuje
   dobrych kandydatów; prototyp sprawdza tylko czytelność.
 - Uczestnicy testu grają rolę rekrutera.
